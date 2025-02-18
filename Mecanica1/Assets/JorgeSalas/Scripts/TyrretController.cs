@@ -6,7 +6,7 @@ public class TyrretController : MonoBehaviour
 {
     public Transform turret, barrel, shootPoint, crosshair;
     public float rotSpeed, bulletSpeed; //La rapidez es la magnitud de la velocidad
-    public GameObject bulletPrefab, RBbulletPrefab;
+    public GameObject bulletPrefab, rbBulletPrefab;
     private float angleX;
 
     void Update()
@@ -57,9 +57,9 @@ public class TyrretController : MonoBehaviour
         {
             Vector3 P0 = shootPoint.position;
             Vector3 direction = shootPoint.forward;
-            GameObject bulletRB = Instantiate(RBbulletPrefab, P0, Quaternion.identity);
-            bulletRB.GetComponent<Rigidbody>().velocity = bulletSpeed * direction;
-            Destroy(bulletRB, 10f);
+            GameObject bulletrb = Instantiate(rbBulletPrefab, P0, Quaternion.identity);
+            bulletrb.GetComponent<Rigidbody>().velocity = bulletSpeed * direction;
+            Destroy(bulletrb, 7f);
         }
     }
 
