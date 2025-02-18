@@ -12,11 +12,17 @@ public class KinematicBullet : MonoBehaviour
     {
         time += Time.deltaTime;
         transform.position = PositionFunction();
+        transform.forward = VelocityFunction();
     }
 
     Vector3 PositionFunction()
     {
         float time2 = time * time;
         return 0.5f * gravity * time2 + initialVelocity * time + initialPosition;
+    }
+
+    Vector3 VelocityFunction()
+    {
+        return gravity * time + initialVelocity;
     }
 }

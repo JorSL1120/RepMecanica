@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class TyrretController : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class TyrretController : MonoBehaviour
 
         float T = FlyTime();
         crosshair.position = PositionFunction(T);
+        CreathPath();
     }
 
     void TurretRotation()
@@ -78,5 +80,18 @@ public class TyrretController : MonoBehaviour
         Vector3 initialPos = shootPoint.position;
         Vector3 initialVel = bulletSpeed * shootPoint.forward;
         return 0.5f * gravity * time * time + initialVel * time + initialPos;
+    }
+
+    void CreathPath()
+    {
+        List<Vector3> points = new List<Vector3>();
+        float T = FlyTime();
+        for(float t = 0; t < T; t += 0.1f)
+        {
+            Vector3 point = PositionFunction(t);
+            points.Add(point);
+        }
+        GetComponent<LineRenderer>().positionCount = points.Count;
+        GetComponent<LineRenderer>().SetPositions(points.ToArray());
     }
 }

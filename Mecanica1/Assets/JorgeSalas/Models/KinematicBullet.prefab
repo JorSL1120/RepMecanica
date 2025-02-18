@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1225857606832235902}
   - component: {fileID: 6027116128452809498}
   - component: {fileID: 1839741397169638551}
-  - component: {fileID: 6864095246760218483}
+  - component: {fileID: 3130127523270924400}
   m_Layer: 0
   m_Name: KinematicBullet
   m_TagString: Untagged
@@ -99,9 +99,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialPosition: {x: 0, y: 0, z: 0}
   initialVelocity: {x: 20, y: 20, z: 0}
---- !u!96 &6864095246760218483
-TrailRenderer:
-  serializedVersion: 3
+--- !u!120 &3130127523270924400
+LineRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -141,8 +141,9 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 1
-  m_PreviewTimeScale: 1
+  m_Positions:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -198,8 +199,7 @@ TrailRenderer:
     textureScale: {x: 1, y: 1}
     shadowBias: 0.5
     generateLightingData: 0
-  m_MinVertexDistance: 0.1
   m_MaskInteraction: 0
-  m_Autodestruct: 0
-  m_Emitting: 1
+  m_UseWorldSpace: 1
+  m_Loop: 0
   m_ApplyActiveColorSpace: 1
